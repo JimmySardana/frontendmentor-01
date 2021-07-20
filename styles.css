@@ -1,120 +1,142 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 body {
     background-color: hsl(233, 47%, 7%);
     color: white;
-    height: 100vh;
+    line-height: 1.8rem;
+    font-size: 0.94rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    font-size: 15px;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Lexend Deca;
 }
 
 .card {
-    min-width: 70%;
-    min-height: 50%;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    align-items: center;
     background-color: hsl(244, 38%, 16%);
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 90%;
     border-radius: 10px;
-    margin: 20px 20px;
+    overflow: hidden;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
 }
 
 .section2 {
-    display: flex;
+    background-image: linear-gradient(hsla(277, 64%, 61%),hsla(277, 64%, 61%)), url(./images/image-header-desktop.jpg);
+    background-blend-mode: multiply;
     width: 50%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-image: linear-gradient(hsla(277, 100%, 39%, 0.363),hsla(277, 100%, 39%, 0.363)), url(./images/image-header-desktop.jpg);
     background-size: cover;
+    opacity: 0.6;
+}
+
+.section2 > img {
+    display: none;
 }
 
 
 .section1 {
     width: 50%;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 0 9rem 2rem 5rem;
+    padding: 4rem 6rem 3rem 4rem;
+    justify-content: space-around;
 }
-
-
 
 .highlight {
-    margin-top: 2rem;
-    font-family: Inter;
+    font-size: 2rem;
     color: hsl(0, 0%, 100%);
-    font-weight: 702;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.highlight span {
-    color: hsl(277, 64%, 61%);
+    margin-bottom: 1rem;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 2.5rem;
 }
 
 p {
-    font-family: Lexend Deca;
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
     color: hsla(0, 0%, 100%, 0.75);
-    line-height: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: Inter;
+}
+
+.highlight > span {
+    color: hsl(277, 64%, 61%);
 }
 
 ul {
-    margin-top: 3rem;
+    margin-top: 2rem;
     list-style: none;
     display: flex;
     justify-content: space-between;
 }
 
-ul li span {
-    display: block;
-    margin-top: .5rem;
-    margin-right: 1rem;
+ul > li {
+    display: flex;
+    flex-direction: column;
 }
 
-ul li span:first-child {
-    font-size: 1.5rem;
+ul > li span:nth-child(1) {
+    font-size: 1.2rem;
     font-family: Inter;
-    font-weight: 702;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
 }
 
-ul li span:last-child {
+ul > li span:nth-child(2) {
     text-transform: uppercase;
     font-family: Lexend Deca;
     color: hsla(0, 0%, 100%, 0.6);
 }
 
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width:1100px) {
     html {
-        font-size: 12px;
+        font-size: 1.2vw;
     }
+}
+
+@media screen and (max-width:720px) {
+    html {
+        font-size: 15px;
+    }
+
     .card {
-        height: 100vh;
-        text-align: center;
         flex-direction: column-reverse;
+        overflow: hidden;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    body {
+        height: auto;
     }
 
     .section1 {
-        padding: 0 2rem;
+        text-align: center;
+        padding: 2rem;
         width: 100%;
     }
 
+
     .section2 {
-        background-image: linear-gradient(hsla(277, 100%, 39%, 0.363),hsla(277, 100%, 39%, 0.363)), url(./images/image-header-mobile.jpg);
-        background-size: cover;
-        height: 100%;
         width: 100%;
+        background-image: none;
+        background-color: hsl(277, 64%, 61%);
+    }
+
+    .section2 > img {
+        display: block;
+        width: 100%;
+        opacity: 0.8;
+        mix-blend-mode: multiply;
     }
 
     ul {
@@ -122,9 +144,7 @@ ul li span:last-child {
         justify-content: space-between;
     }
 
-    ul li {
+    ul > li {
         margin-bottom: 2rem;
     }
-
-    
 }
